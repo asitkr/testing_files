@@ -72,19 +72,39 @@
 
 
 // Two groups in terminal
+// import { render, screen } from "@testing-library/react"
+// import Greet from "./Greet"
+
+// describe('Greet', () => {
+//     test('renders correctly', () => {
+//         render(<Greet />);
+//         const textElement = screen.getByText("Hello");
+//         expect(textElement).toBeInTheDocument()
+//     })
+// })
+
+// describe("nested", () => {
+//     test('renders with name', () => {
+//         render(<Greet name="Ashit" />);
+//         const textElement = screen.getByText("Hello Ashit");
+//         expect(textElement).toBeInTheDocument()
+//     })
+// })
+
+// filename.spec.js or filename.spec.tsx we it() method instead of test()
 import { render, screen } from "@testing-library/react"
 import Greet from "./Greet"
 
 describe('Greet', () => {
-    test('renders correctly', () => {
+    it('renders correctly', () => {
         render(<Greet />);
-        const textElement = screen.getByText(/Hello/);
+        const textElement = screen.getByText("Hello");
         expect(textElement).toBeInTheDocument()
     })
 })
 
 describe("nested", () => {
-    test('renders with name', () => {
+    it('renders with name', () => {
         render(<Greet name="Ashit" />);
         const textElement = screen.getByText("Hello Ashit");
         expect(textElement).toBeInTheDocument()
